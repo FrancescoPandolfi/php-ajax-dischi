@@ -1,3 +1,12 @@
+<?php
+include __DIR__ . '/includes/database.php';
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
