@@ -1,0 +1,77 @@
+// COLORS
+$mainColor: #1f1f1f;
+$secColor: #121212;
+$terColor: #1a1a1a;
+$textColor: #8e8e8e;
+$yearColor: #535353;
+
+// FONT
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background: $mainColor;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav.navbar {
+  width: 100%;
+  background-color: $secColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  img {
+    width: 30px;
+  }
+}
+
+.main_wrapper {
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+}
+
+.album {
+  width: calc((100% / 3) - 12px);
+  margin: 6px;
+  padding: 30px;
+  background-color: $secColor;
+  border-radius: 10px;
+  color: white;
+};
+  .cover {
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
+
+  h2.title {
+    margin: 20px 0 10px;
+  }
+  .author {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: $textColor;
+
+  }
+  .year {
+    font-size: 10px;
+    color: $yearColor;
+  }

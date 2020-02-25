@@ -1,10 +1,6 @@
 <?php
-include __DIR__ . '/includes/database.php';
-
-
-
+  include __DIR__ . '/includes/database.php';
 ?>
-
 
 
 <!DOCTYPE html>
@@ -18,5 +14,31 @@ include __DIR__ . '/includes/database.php';
 </head>
 <body>
 
+  <!-- header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="partials/img/logo.svg" alt="">
+      </div>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+    <div class="main_wrapper">
+
+      <?php foreach ($database as $album): ?>
+        <div class="album">
+          <div class="cover">
+            <img src="<?=$album['poster'] ?>" alt="">
+          </div>
+          <h2 class="title"><?=$album['title'] ?></h2>
+          <p class="author"><?=$album['author'] ?></p>
+          <p class="year"><?=$album['year'] ?></p>
+        </div>
+      <?php endforeach; ?>
+
+    </div>
+  </main>
 </body>
 </html>
