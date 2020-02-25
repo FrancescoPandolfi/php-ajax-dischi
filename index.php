@@ -18,7 +18,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="partials/img/logo.svg" alt="">
+        <img src="src/partials/img/logo.svg" alt="">
       </div>
     </nav>
   </header>
