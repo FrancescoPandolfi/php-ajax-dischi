@@ -16,6 +16,7 @@ nav.navbar {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
 }
 
 .logo {
@@ -45,6 +46,14 @@ nav.navbar {
   background-color: #121212;
   border-radius: 10px;
   color: white;
+  transition: 0.3s;
+}
+
+.album:hover {
+  z-index: 10;
+  transform: scale(1.03);
+  -webkit-filter: drop-shadow(0 0 10px rgba(228, 226, 40, 0.04));
+          filter: drop-shadow(0 0 10px rgba(228, 226, 40, 0.04));
 }
 
 .cover {
