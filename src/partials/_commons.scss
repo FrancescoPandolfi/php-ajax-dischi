@@ -3,11 +3,13 @@
   margin: 0;
   box-sizing: border-box;
   list-style: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: $mainColor;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font;
 }
 
 nav.navbar {
@@ -30,16 +32,17 @@ nav.navbar {
 }
 
 .main_wrapper {
-  width: 980px;
+  max-width: 1012px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  padding: 100px 14px 50px 14px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(1, auto);
   padding-top: 100px;
   padding-bottom: 50px;
 }
 
 .album {
-  width: calc((100% / 3) - 12px);
   margin: 6px;
   padding: 30px;
   background-color: $secColor;
@@ -48,25 +51,26 @@ nav.navbar {
   transition: all 0.4s;
   &:hover {
     z-index: 10;
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 10px rgba(228, 226, 40, 0.04));
+    transform: translateY(-2px);
+    background-color: lighten($secColor, 2);
   }
 };
   .cover {
     text-align: center;
     img {
       width: 100%;
+      transform: translate3d(0,0,0);
     }
   }
 
   h2.title {
     margin: 20px 0 10px;
   }
-  .author {
+  h3.author {
     margin-bottom: 8px;
     font-size: 16px;
+    font-weight: normal;
     color: $textColor;
-
   }
   .year {
     font-size: 10px;

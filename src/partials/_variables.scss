@@ -3,5 +3,10 @@
 $mainColor: #1f1f1f;
 $secColor: #121212;
 $terColor: #1a1a1a;
+
 $textColor: #8e8e8e;
-$yearColor: #535353;
+$yearColor: darken($textColor, 30);
+
+// Type
+$font: 'Montserrat', sans-serif;
+$fontSize: 16px;

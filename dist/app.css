@@ -3,6 +3,8 @@
   margin: 0;
   box-sizing: border-box;
   list-style: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -31,16 +33,17 @@ nav.navbar {
 }
 
 .main_wrapper {
-  width: 980px;
+  max-width: 1012px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  padding: 100px 14px 50px 14px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(1, auto);
   padding-top: 100px;
   padding-bottom: 50px;
 }
 
 .album {
-  width: calc((100% / 3) - 12px);
   margin: 6px;
   padding: 30px;
   background-color: #121212;
@@ -51,9 +54,8 @@ nav.navbar {
 
 .album:hover {
   z-index: 10;
-  transform: scale(1.03);
-  -webkit-filter: drop-shadow(0 0 10px rgba(228, 226, 40, 0.04));
-          filter: drop-shadow(0 0 10px rgba(228, 226, 40, 0.04));
+  transform: translateY(-2px);
+  background-color: #171717;
 }
 
 .cover {
@@ -62,20 +64,22 @@ nav.navbar {
 
 .cover img {
   width: 100%;
+  transform: translate3d(0, 0, 0);
 }
 
 h2.title {
   margin: 20px 0 10px;
 }
 
-.author {
+h3.author {
   margin-bottom: 8px;
   font-size: 16px;
+  font-weight: normal;
   color: #8e8e8e;
 }
 
 .year {
   font-size: 10px;
-  color: #535353;
+  color: #424242;
 }
 
