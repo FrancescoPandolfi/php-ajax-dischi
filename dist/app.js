@@ -15821,7 +15821,6 @@ $(document).ready(function () {
   // Chiamata che prende gli albums
   $.ajax({
     url: "http://localhost:8888/php-ajax-dischi/includes/server.php",
-    // data: {'author' : 'autore'},
     success: function success(data) {
       printAlbums(data);
     },
@@ -15834,12 +15833,31 @@ $(document).ready(function () {
     url: "http://localhost:8888/php-ajax-dischi/includes/server.php",
     success: function success(data) {
       data.forEach(function (item) {
-        $('select').append('<option value=' + item.author + '>' + item.author + '</option>');
+        $('select').append('<option>' + item.author + '</option>');
       });
     },
     error: function error(richiesta, stato, errore) {
       $('main').append("<li>È avvenuto un errore. " + errore + "</li>");
     }
+  }); // select
+
+  $(document).on("change", "select", function () {
+    var selectedAuthor = $(this).children("option:selected").val();
+    console.log(selectedAuthor);
+    $.ajax({
+      url: "http://localhost:8888/php-ajax-dischi/includes/server.php",
+      data: {
+        'author': selectedAuthor
+      },
+      success: function success(data) {
+        console.log(data);
+        $('.main_wrapper').html('');
+        printAlbums(data);
+      },
+      error: function error(richiesta, stato, errore) {
+        $('main').append("<li>È avvenuto un errore. " + errore + "</li>");
+      }
+    });
   });
 });
 

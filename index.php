@@ -20,7 +20,7 @@
       <div class="select">
         <select name="author">
           <option selected disabled>Choose an author</option>
-          <option value="All">All</option>
+          <option>All</option>
         </select>
       </div>
 

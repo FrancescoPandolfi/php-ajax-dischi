@@ -35,7 +35,7 @@ $database = [
     ],
     [
       'title' => 'Everest',
-      'author' => 'Klangstof ',
+      'author' => 'Klangstof',
       'year' => 2017,
       'poster' => 'https://img.discogs.com/FDq6vZzvTqDQzW13OSuvEqrI974=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11186557-1552054030-6615.jpeg.jpg'
     ],
@@ -53,7 +53,7 @@ $database = [
     ],
     [
       'title' => 'Sleeping With Ghosts',
-      'author' => 'PLacebo',
+      'author' => 'Placebo',
       'year' => 2003,
       'poster' => 'https://img.discogs.com/LMTLjY2wEVqg0VUmSh9of54ULDU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-368773-1432291865-8036.jpeg.jpg'
     ]
