@@ -38,29 +38,33 @@ nav.navbar {
 }
 
 .main_wrapper {
-  max-width: 1012px;
+  max-width: 980px;
   margin: 0 auto;
-  display: grid;
-  padding: 100px 14px 50px 14px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: repeat(1, auto);
-  padding-top: 100px;
-  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px 20px 50px;
 }
 
 .album {
+  width: calc((100% / 3) - 12px);
   margin: 6px;
   padding: 30px;
   background-color: #121212;
   border-radius: 10px;
   color: white;
-  transition: all 0.4s;
+  transition: transform 0.4s, background-color 0.4s;
 }
 
 .album:hover {
   z-index: 10;
   transform: translateY(-2px);
   background-color: #171717;
+}
+
+@media (max-width: 768px) {
+  .album {
+    width: calc((100% / 2) - 12px);
+  }
 }
 
 .cover {
@@ -99,7 +103,7 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  border: 0 !important;
+  border: 0;
   background: #222;
   background-image: none;
 }
@@ -116,19 +120,11 @@ select::-ms-expand {
   position: relative;
   display: flex;
   width: 140px;
-  height: 32px;
-  border: 1px solid #8f8f8f;
-  line-height: 30px;
+  height: 26px;
+  border: 1px solid #3c3c3c;
+  line-height: 24px;
   background: #222;
   overflow: hidden;
-  margin-left: 15px;
-  transition: 0.4s all ease;
-}
-
-@media screen and (max-width: 700px) {
-  .select {
-    width: 32px;
-  }
 }
 
 select {
