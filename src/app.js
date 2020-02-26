@@ -7,7 +7,7 @@ $(document).ready(function() {
   var source = $("#album-template").html();
   var template = Handlebars.compile(source);
 
-  
+
   $.ajax({
     url: "http://localhost:8888/php-ajax-dischi/includes/server.php",
     method: "GET",
