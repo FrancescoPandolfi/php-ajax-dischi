@@ -15818,35 +15818,51 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
-  // handlebar setup
-  var source = $("#album-template").html();
-  var template = Handlebars.compile(source);
+  // Chiamata che prende gli albums
   $.ajax({
     url: "http://localhost:8888/php-ajax-dischi/includes/server.php",
-    method: "GET",
-    // data: {'year' : '2018'},
-    success: function success(data, stato) {
-      data.forEach(function (album) {
-        var context = {
-          title: album.title,
-          author: album.author,
-          poster: album.poster,
-          year: album.year
-        };
-        var html = template(context);
-        $('.main_wrapper').append(html);
-      });
+    // data: {'author' : 'autore'},
+    success: function success(data) {
+      printAlbums(data);
     },
     error: function error(richiesta, stato, errore) {
       alert("E' avvenuto un errore. " + errore);
     }
-  }); // $(document).on('mouseenter', '.album', () => {
-  //       console.log('ciao');
-  // });
-  // $(document).on('mouseleave', '.album', () => {
-  //   console.log('ciao');
-  // });
+  }); // Chiamata che popola la select
+
+  $.ajax({
+    url: "http://localhost:8888/php-ajax-dischi/includes/server.php",
+    success: function success(data) {
+      data.forEach(function (item) {
+        $('select').append('<option value=' + item.author + '>' + item.author + '</option>');
+      });
+    },
+    error: function error(richiesta, stato, errore) {
+      $('main').append("<li>È avvenuto un errore. " + errore + "</li>");
+    }
+  });
 });
+
+function printAlbums(albums) {
+  // handlebar setup
+  var source = $("#album-template").html();
+  var template = Handlebars.compile(source);
+  albums.forEach(function (album) {
+    var context = {
+      title: album.title,
+      author: album.author,
+      poster: album.poster,
+      year: album.year
+    };
+    var html = template(context);
+    $('.main_wrapper').append(html);
+  });
+} // $(document).on('mouseenter', '.album', () => {
+//       console.log('ciao');
+// });
+// $(document).on('mouseleave', '.album', () => {
+//   console.log('ciao');
+// });
 
 /***/ }),
 

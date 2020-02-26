@@ -12,9 +12,18 @@
   <!-- header -->
   <header>
     <nav class="navbar">
+
       <div class="logo">
         <img src="src/partials/img/logo.svg" alt="">
       </div>
+
+      <div class="select">
+        <select name="author">
+          <option selected disabled>Choose an author</option>
+          <option value="All">All</option>
+        </select>
+      </div>
+
     </nav>
   </header>
 

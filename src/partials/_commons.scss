@@ -14,22 +14,27 @@ body {
 
 nav.navbar {
   width: 100%;
+  padding: 0 30px;
   background-color: $secColor;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
   height: 60px;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  margin-right: auto;
   img {
     width: 30px;
   }
 }
+
+
 
 .main_wrapper {
   max-width: 1012px;
@@ -76,3 +81,68 @@ nav.navbar {
     font-size: 10px;
     color: $yearColor;
   }
+
+
+  /* ////////// */
+  /* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #222;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 140px;
+  height: 32px;
+  border: 1px solid #8f8f8f;
+  line-height: 30px;
+  background: #222;
+  overflow: hidden;
+  margin-left: 15px;
+  -webkit-transition: .4s all ease;
+  -o-transition: .4s all ease;
+  transition: .4s all ease;
+}
+  @media screen and (max-width:700px) {
+    .select {
+      width: 32px;
+    }
+  }
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #bebebe;
+  cursor: pointer;
+  font-size: 12px;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  font-size: 10px;
+  top: 0;
+  right: 0;
+  padding: 1px 10px 0;
+  background: #2f2f2f;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #5fd555;
+}
